@@ -31,4 +31,21 @@ print(s4)
 s5 = "A\\in a string"
 
 print(s5)
-print(s5)
+
+s6 = 'this is " wow'
+print(s6)
+
+#raw strings
+
+raw_string = r'c:\User\documents\books'
+print(raw_string)
+
+# string as sequence
+
+s = "parrot"
+print("s[4]", s[4], type(s))  #index notation: 0, 1, 2...
+
+print(s, s.capitalize())
+
+
+
