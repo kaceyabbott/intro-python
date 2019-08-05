@@ -12,5 +12,7 @@ while counter != 0:
     # augmented operators
     counter -= 1
 
+print("outside while loop")
+
 
 
