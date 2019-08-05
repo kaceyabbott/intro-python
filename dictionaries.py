@@ -15,4 +15,21 @@ print(d, type(d))
 print(d['alice'])
 
 
+#add memebers to the dictionary, of names -> grades
+
+roster = {} #empty dictionary
+
+
+count = 0
+
+while count < 3:
+     name = input("enter name of student: ")
+     grade =input ("enter grade of student: ")
+
+     roster[name] = grade
+
+     count +=1
+
+print(roster)
+print(roster['kacey'])
 
