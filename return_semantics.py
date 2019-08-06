@@ -2,6 +2,8 @@
 working with python functions and return handles
 """
 
+
+
 def egg(var):
     """
     returns variable back ot the user
@@ -21,6 +23,26 @@ def sum_two(num1, num2=8):
     print(num1, "+", num2, "= ", total)
     return num1+num2
 
+def banner(message, border = "*"):
+    length = len(message)
+    bord = border
+    #wide = width(message)
+    print(bord*(length+4))
+    print(bord,message,bord)
+    print(bord*(length+4))
+
+def add_spam(menu = None):
+    """
+    add spam to the menu list
+    :param menu: menu
+    :return: return the list
+    """
+    if menu is None:
+        menu = []
+
+    menu.append("spam")
+    return menu
+
 
 def main():
     """
@@ -32,9 +54,13 @@ def main():
     print(c is e)
     n1 = 3
     n2 = 9
-    sum_two(n1,n2)
-    sum_two(n1)
+    #sum_two(n1,n2)
+    #sum_two(n1)
+    banner('hello world',".")
 
+    breakfast = ['eggs', 'bacon']
+    print(breakfast)
+    print(add_spam(breakfast))
 
 if __name__ == '__main__':
     main()
