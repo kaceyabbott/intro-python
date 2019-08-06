@@ -30,7 +30,7 @@ def main():
 
     for item in info:
         new_info = item.lstrip('0123456789')
-
+        os.chdir(file)
         os.rename(item, new_info)
         print(new_info)
     os.chdir(path)
