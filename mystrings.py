@@ -38,7 +38,7 @@ def main():
     print("galatic position x = {pos[0]}, y = {pos[1]}".format(pos=(x,y)))
 
 
-
+#
 
 
 if __name__ == '__main__':
