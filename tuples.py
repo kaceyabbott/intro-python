@@ -20,6 +20,7 @@ def do_tuples():
     #     print(t2, type(t2))
         # tuple contructor: tuple()
         tfroml = tuple([3,77,11])
+
         print(tfroml, type(tfroml))
     #test for membership
         print(5 in (3, 6, 8, 5, 12))
