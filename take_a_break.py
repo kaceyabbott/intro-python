@@ -5,7 +5,7 @@ set an alarm to take a break
 """
 import webbrowser
 import time
-length_of_time = 60*60
+length_of_time = 60*15
 
 
 
