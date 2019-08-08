@@ -18,3 +18,13 @@ This is an introduction to python.
 - Tuples and unpacking tuples
 - learn more about strings
 
+## Day 3 summary
+- completed our discussion on collections
+    - list
+    - dictionaries
+    - strings
+    - tuples
+    - range
+    - sets
+- Basic of exceptions: **try, except, throw**
+- comprehensions
