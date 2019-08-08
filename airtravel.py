@@ -6,7 +6,7 @@ class flight:
     """
     a flight with a particular passenger aircraft
     """
-    def __init__(self,number):
+    def __init__(self,number, aircraft):
         """
         initializes flight number
         :param number: flight number
@@ -26,8 +26,11 @@ class flight:
             raise ValueError('invalid flight number'.format(number))
 
         self._number = number
+        self._aircraft = aircraft
 
-
+        rows, seats = self._aircraft.seating()
+        self._seating = [None] + \
+                    [{letter: None for letter in seats} for _ in rows]
 
 
     def number(self):
@@ -37,6 +40,41 @@ class flight:
     def airline(self):
 
         return self._number[:2]
+
+
+
+
+
+
+class aircraft:
+    def __init__(self, registration, model, number_of_rows, num_of_seats):
+        self._registration = registration
+        self._model = model
+        self._number_of_rows = number_of_rows
+        self._num_of_seats = num_of_seats
+
+    def registration(self):
+        return self._registration
+
+    def model(self):
+        return self._model
+
+    def number_of_rows(self):
+        return self._number_of_rows
+
+    def num_of_seats(self):
+        return self._num_of_seats
+
+    def seating(self):
+        return (range(1, self._number_of_rows + 1),
+                'ABCDEFGHJK'[:self._num_of_seats])
+
+
+
+
+
+
+
 
 
 

@@ -2,20 +2,22 @@
 use flight class
 """
 
-from airtravel import flight
-
+from airtravel import flight, aircraft
+from pprint import pprint as pp
 
 def main():
     """
     test function
     :return: 
     """
-    f = flight('SN066')
-    print(f,type(f))
-    f2 = flight('SN013')
-    print(f2.number())
-    print(f2.number(),f2.airline())
-    # could use: flight.number(f)
+    f1 = flight('SN066', aircraft("g-eup",
+                        'airbusA319',
+                        number_of_rows=22,
+                        num_of_seats=6))
+
+
+
+    pp(f1._seating)
 
 
 if __name__ == '__main__':
