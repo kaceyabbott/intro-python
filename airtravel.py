@@ -2,6 +2,7 @@
 a flight class. model for aircraft flights
 """
 
+
 class flight:
     """
     a flight with a particular passenger aircraft
@@ -40,6 +41,42 @@ class flight:
     def airline(self):
 
         return self._number[:2]
+
+    def allocate_seat(self, seat, passenger):
+        """
+        allocate a seat to a passenger
+        :param seat: a seat designator '12C'
+        :param passenger: passenger name
+        :return:
+        """
+        rows, seatletter = self._aircraft.seating()
+        letter = seat[-1] #taking the letter from the seat
+        if letter not in seatletter:
+            raise ValueError("invalid seat letter".format(letter))
+        rowtext = seat[:-1]
+        try:
+            row = int(rowtext)
+        except ValueError:
+            raise ("invalid seat row{}".format(rowtext))
+
+        if row not in rows:
+            raise ValueError("invalid row number{}".format(row))
+
+        if self._seating[row][letter] is not None:
+            raise ValueError("seat {} already taken".format(seat))
+
+        #assign seat
+        self._seating[row][letter] = passenger
+
+    def num_availableseats(self):
+        return sum(sum(1 for s in row.values() if s is None)\
+                for row in self._seating if row is not None)
+
+    def makeboardingclass(self,card_printer):
+        for passenger,seat in sorted(self._passengerseat()):
+            pass
+
+
 
 
 
